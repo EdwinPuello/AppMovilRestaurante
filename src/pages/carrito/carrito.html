@@ -1,0 +1,66 @@
+<ion-header>
+
+    <ion-navbar color="color1">
+        <ion-title>
+            <ion-icon item-end name="ios-cart-outline"></ion-icon> Pedidos</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="back">
+
+    <div *ngIf="espera">
+
+        <div *ngIf="carritos.item.length == 0" class="carrito_vacio" text-center>
+            <ion-icon class="icon-5x" name="ios-cart-outline"></ion-icon>
+            <br> Su carrito esta vació
+        </div>
+
+        <div *ngIf="carritos.item.length != 0">
+            <ion-list style="background-color:#c6c1bf9c">
+
+                <ion-item-sliding *ngFor="let item of carritos.item">
+
+                    <ion-item style="background-color: transparent">
+                        <ion-avatar item-start>
+                            <img style="width: 50px; height: 50px;" [src]="item.b64">
+                        </ion-avatar>
+                        <h2>{{item.nombre}}</h2>
+                        <p> {{item.descripcion}} </p>
+                        <p item-end style="font-weight: bold"> {{item.precio | currency:'COP':'symbol':'4.2-2' }} </p>
+                    </ion-item>
+
+                    <ion-item-options>
+                        <button (click)="borrar(item)" style="background-color: transparent; color:red" ion-button color="secondary" icon-start>
+                    <ion-icon name="md-trash"></ion-icon>
+              Eliminar
+            </button>
+                    </ion-item-options>
+
+                </ion-item-sliding>
+            </ion-list>
+
+            <ion-item-divider style="background-color:#d1cbc9e8; border-radius: 7px" class="bordertop">
+                <h4>Total: <a style="font-weight: bold">{{total | currency}}</a></h4>
+                <button (click)="enviar()" ion-button item-end>Enviar Pedido</button>
+            </ion-item-divider>
+        </div>
+    </div>
+
+    <div *ngIf="pedido">
+        <img src="../../assets/imgs/reloj.gif" class="reloj">
+        <br>
+        <h4 class="texto">
+            Su pedido esta en proceso el tiempo estimado es 2 Minutos
+        </h4>
+        <button style="display: block; margin: auto" (click)="cancelar()" ion-button color="danger">Cancelar Pedido</button>
+    </div>
+
+</ion-content>

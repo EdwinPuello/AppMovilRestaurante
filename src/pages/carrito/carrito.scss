@@ -1,0 +1,43 @@
+page-carrito {
+    .bordertop {
+        border-top: 1px solid #dedede;
+        margin-top: 5%;
+    }
+    .back {
+        background-image: url(../../assets/imgs/factura.jpg);
+        background-size: cover;
+    }
+    .list-md ion-item-sliding {
+        background-color: rgba(255, 255, 255, 0.445);
+    }
+    .list-header-md {
+        padding-left: 16px;
+        margin-bottom: 0px;
+        min-height: 4.5rem;
+        border-top: 1px solid #dedede;
+        font-size: 1.4rem;
+        color: black;
+        font-weight: 900;
+        background-color: #ffffffc2
+    }
+    .icono {
+        position: absolute;
+        font-weight: bold;
+        top: -25%;
+        right: 3%;
+        font-size: 9px;
+    }
+    .reloj {
+        width: 25%;
+        margin: auto;
+        display: block;
+        margin-top: 59%;
+    }
+    .texto {
+        color: darkslategrey;
+        font-size: 20px;
+        text-align: justify;
+        text-shadow: #7984b9 0.1em 0.1em 0.2em;
+        font-weight: 900;
+    }
+}

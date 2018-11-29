@@ -1,0 +1,54 @@
+<ion-header>
+
+    <ion-navbar color="color1">
+        <ion-title>{{titulo}}
+            <ion-icon (click)="carritos()" style="position: absolute;right: 5%;" name="ios-cart-outline"></ion-icon>
+            <ion-badge (click)="carritos()" class="icono" *ngIf="carrito.item.length > 0" color="danger"> {{carrito.item.length}} </ion-badge>
+        </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="back" padding>
+
+    <ion-list style="background-color:#d6ac9d9c">
+
+        <ion-list-header class="list-header-md">
+            Populares
+            <p *ngIf="mostrar">
+                !!Puedes dezlizar a la derecha o izquierda¡¡
+                <p>
+        </ion-list-header>
+
+
+        <ion-item-sliding *ngFor="let item of pizzas">
+            <ion-item style="background-color: transparent">
+                <ion-avatar item-start>
+                    <img style="width: 80px; height: 80px;" [src]="item.b64">
+                </ion-avatar>
+                <h2>{{item.nombre}}</h2>
+                <p> {{item.descripcion}} </p>
+                <p>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half"></ion-icon>
+                </p>
+                <button (click)="carrito.agregar_carrito(item)" ion-button clear item-end>Pedir</button>
+            </ion-item>
+            <ion-item-options (ionSwipe)="saveItem(1)">
+                <button (click)="carrito.agregar_carrito(item)" style="background-color: transparent; color:maroon" ion-button color="secondary" icon-start>
+              <ion-icon name="add-circle"></ion-icon>
+              {{item.precio | currency:'COP':'symbol':'4.2-2' }}
+            </button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+
+
+
+    </ion-list>
+
+</ion-content>

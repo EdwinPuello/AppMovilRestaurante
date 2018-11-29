@@ -1,3 +1,40 @@
 page-home {
-
+    .back {
+        background-image: url(../../assets/imgs/background.jpg)
+    }
+    .titulo {
+        right: 0;
+        position: absolute;
+        bottom: 36%;
+        left: 0;
+        font-weight: 900;
+        color: white;
+        font-size: 52px;
+        text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+    }
+    .titulo2 {
+        position: absolute;
+        bottom: 33%;
+        left: 29%;
+        font-weight: 900;
+        color: white;
+    }
+    .des {
+        right: 0;
+        position: absolute;
+        bottom: 14%;
+        left: 0;
+        font-weight: 900;
+        font-size: 15px;
+        position: absolute;
+        text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px 2px 0 black, -2px -2px 0 black, 2px 0px 0 black, 0px 2px 0 black, -2px 0px 0 black, 0px -2px 0 black;
+        color: #FFFFFF;
+    }
+    .icono {
+        position: absolute;
+        font-weight: bold;
+        top: -25%;
+        right: -2%;
+        font-size: 9px;
+    }
 }
